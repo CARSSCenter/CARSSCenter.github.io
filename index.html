@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>OpenNerve – Open Source Neuromodulation Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #0f172a;
+      color: #e5e7eb;
+    }
+
+    header {
+      padding: 2rem 1.5rem;
+      text-align: center;
+      background: radial-gradient(circle at top, #1e293b, #020617);
+      border-bottom: 1px solid #1f2937;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+
+    header p {
+      margin: 0.75rem auto 0;
+      max-width: 640px;
+      line-height: 1.5;
+      color: #9ca3af;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+    }
+
+    .diagram-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .diagram-subtitle {
+      text-align: center;
+      color: #9ca3af;
+      margin-bottom: 2rem;
+    }
+
+    .diagram-grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    }
+
+    .component-card {
+      background: #020617;
+      border-radius: 0.9rem;
+      border: 1px solid #1f2937;
+      padding: 1.25rem 1.3rem;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out,
+                  border-color 0.12s ease-out, background 0.12s ease-out;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .component-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 50px rgba(15, 23, 42, 0.9);
+      border-color: #38bdf8;
+      background: #020617;
+    }
+
+    .component-icon {
+      font-size: 1.6rem;
+    }
+
+    .component-title {
+      font-weight: 600;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .component-desc {
+      font-size: 0.9rem;
+      color: #9ca3af;
+      line-height: 1.5;
+    }
+
+    .component-link {
+      margin-top: auto;
+      font-size: 0.85rem;
+      color: #38bdf8;
+    }
+
+    .component-link span {
+      opacity: 0.7;
+    }
+
+    footer {
+      border-top: 1px solid #1f2937;
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+
+    a {
+      color: inherit;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>OpenNerve</h1>
+    <p>
+      An open-source neuromodulation platform. This diagram shows the main components
+      of the system — click any module to jump to its GitHub repository or external data storage
+    </p>
+  </header>
+
+  <main>
+    <h2 class="diagram-title">System Components</h2>
+    <p class="diagram-subtitle">
+      Each block is a GitHub repo. Fork, star, and contribute where you’re interested.
+    </p>
+
+    <!-- "Graphic" made of clickable cards -->
+    <section class="diagram-grid">
+
+      <!-- Hardware PCB -->
+      <a class="component-card"
+         href="https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/"
+         target="_blank" rel="noopener noreferrer">
+        <div class="component-title">
+          <span class="component-icon">🧩</span>
+          <span>Hardware &amp; PCB</span>
+        </div>
+        <p class="component-desc">
+          KiCad designs, schematics, BOMs, and enclosure details
+          for the implantable / ear-worn neuromodulation hardware.
+        </p>
+        <div class="component-link">
+          <span>View GitHub repo →</span>
+        </div>
+      </a>
+
+      <!-- Firmware -->
+      <a class="component-card"
+         href="https://github.com/CARSSCenter/OpenNerve-Control-Software"
+         target="_blank" rel="noopener noreferrer">
+        <div class="component-title">
+          <span class="component-icon">⚙️</span>
+          <span>Windows Controller &amp; Visual Studios Code</span>
+        </div>
+        <p class="component-desc">
+          Firmware for the MCU, stimulation waveforms, BLE APIs, and
+          low-power state machines for real-time operation.
+        </p>
+        <div class="component-link">
+          <span>View GitHub repo →</span>
+        </div>
+      </a>
+
+      <!-- Desktop / Mobile App -->
+      <a class="component-card"
+         href="https://github.com/YOURORG/YOUR-APP-REPO"
+         target="_blank" rel="noopener noreferrer">
+        <div class="component-title">
+          <span class="component-icon">💻</span>
+          <span>Test</span>
+        </div>
+        <p class="component-desc">
+          Desktop or mobile interface for configuring parameters,
+          monitoring sessions, and logging study data.
+        </p>
+        <div class="component-link">
+          <span>View GitHub repo →</span>
+        </div>
+      </a>
+
+      <!-- DAQ / Experiments -->
+      <a class="component-card"
+         href="https://github.com/YOURORG/YOUR-DAQ-REPO"
+         target="_blank" rel="noopener noreferrer">
+        <div class="component-title">
+          <span class="component-icon">📡</span>
+          <span>Test &amp; Experiment Tools</span>
+        </div>
+        <p class="component-desc">
+          Scripts and tooling for EMG / EEG / pressure data acquisition,
+          stimulation timing, and experimental protocols.
+        </p>
+        <div class="component-link">
+          <span>View GitHub repo →</span>
+        </div>
+      </a>
+
+      <!-- Analysis -->
+      <a class="component-card"
+         href="https://github.com/YOURORG/YOUR-ANALYSIS-REPO"
+         target="_blank" rel="noopener noreferrer">
+        <div class="component-title">
+          <span class="component-icon">📊</span>
+          <span>Test</span>
+        </div>
+        <p class="component-desc">
+          Python notebooks, pipelines, and utilities for signal processing,
+          spectral analysis, and study result visualization.
+        </p>
+        <div class="component-link">
+          <span>View GitHub repo →</span>
+        </div>
+      </a>
+
+      <!-- Docs -->
+      <a class="component-card"
+         href="https://github.com/YOURORG/YOUR-DOCS-REPO"
+         target="_blank" rel="noopener noreferrer">
+        <div class="component-title">
+          <span class="component-icon">📚</span>
+          <span>Test</span>
+        </div>
+        <p class="component-desc">
+          User guides, hardware bring-up instructions, API references,
+          and design rationales for contributors and collaborators.
+        </p>
+        <div class="component-link">
+          <span>View GitHub repo →</span>
+        </div>
+      </a>
+
+    </section>
+  </main>
+
+  <footer>
+    <a href="https://github.com/CARSSCenter" target="_blank" rel="noopener noreferrer">
+      View all repositories
+    </a>
+  </footer>
+</body>
+</html>
